@@ -173,6 +173,7 @@
       "Jye Smith",
       "KMfpv",
       "LeadFingers",
+      "mh-fpv",
       "MinChan Kim",
       "mouseFPV",
       "MrAlucardDante",
@@ -851,23 +852,14 @@
     },
     {
       "fullPath": "presets/4.3/modes/mh-fpv.txt",
-      "hash": "79b2913b8d335bcc9d06087e3921d57ff73b69a8639c1b615897de84eae4b16c",
-      "title": "Default 4.3 Modes and Adjustment settings",
+      "hash": "f6aea3eca347688aa0d403a3e81416197ea41d46735e094afefe4bcaa8a8d5a2",
+      "title": "mh-fpv modes",
       "firmware_version": [
         "4.3"
       ],
       "category": "MODES",
-      "status": "OFFICIAL",
-      "keywords": [
-        "defaults",
-        "reset",
-        "mode",
-        "modes",
-        "adjustments",
-        "aux",
-        "switch"
-      ],
-      "author": "Betaflight",
+      "status": "COMMUNITY",
+      "author": "mh-fpv",
       "priority": 0
     },
     {

@@ -1,10 +1,9 @@
-#$ TITLE: Default 4.3 Modes and Adjustment settings
+#$ TITLE: mh-fpv modes
 #$ FIRMWARE_VERSION: 4.3
 #$ CATEGORY: MODES
-#$ STATUS: OFFICIAL
-#$ KEYWORDS: defaults, reset, mode, modes, adjustments, aux, switch
-#$ AUTHOR: Betaflight
-#$ DESCRIPTION: Resets modes and adjustment ranges to 4.3 defaults
+#$ STATUS: COMMUNITY
+#$ AUTHOR: mh-fpv
+#$ DESCRIPTION: Personal modes
 
 # aux switch settings
 # aux
