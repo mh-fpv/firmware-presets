@@ -926,6 +926,22 @@
       "priority": 0
     },
     {
+      "fullPath": "presets/4.3/osd/mh-fpv.txt",
+      "hash": "6a2075dc7128af09c7a9c5e63df8f9b57fdbd9a295215ae52e76076b69f047a5",
+      "title": "mh-fpv OSD DJI with GPS",
+      "firmware_version": [
+        "4.3"
+      ],
+      "category": "OSD",
+      "status": "COMMUNITY",
+      "keywords": [
+        "DJI",
+        "GPS"
+      ],
+      "author": "mh-fpv",
+      "priority": 0
+    },
+    {
       "fullPath": "presets/4.3/other/ELRS_Passthrough.txt",
       "hash": "1314352dd602fa60a9d8737439b20b91ffdd2ab0a92a378e66a7367f15f7f758",
       "title": "ExpressLRS Passthrough Betaflight Settings",
