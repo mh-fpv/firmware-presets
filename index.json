@@ -927,7 +927,7 @@
     },
     {
       "fullPath": "presets/4.3/osd/mh-fpv.txt",
-      "hash": "6a2075dc7128af09c7a9c5e63df8f9b57fdbd9a295215ae52e76076b69f047a5",
+      "hash": "245288129db1b2d84dd7b45e24b539f37104ce0c54bc1e6e916cc8e423956809",
       "title": "mh-fpv OSD DJI with GPS",
       "firmware_version": [
         "4.3"
