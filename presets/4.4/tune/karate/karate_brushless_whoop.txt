@@ -1,23 +1,22 @@
-#$ TITLE: Karate 'Viper Lite' Race  5"
+#$ TITLE: Karate brushless whoop
 #$ FIRMWARE_VERSION: 4.4
 #$ CATEGORY: TUNE
 #$ STATUS:  COMMUNITY
-#$ KEYWORDS: karate, race, 5 inch, 5", sugarK, limon, ctzsnooze, KarateBrot, ultralite, viper, viper lite, sliders
+#$ KEYWORDS: karate, 2s, 1S, race, brushless, whoop, 65mm, sugarK, KarateBrot
 #$ AUTHOR: sugarK
 
 #$ PARSER: MARKED
 
 #$ DESCRIPTION:
-#$ DESCRIPTION: <img src="https://user-images.githubusercontent.com/19867640/176932353-fdc42c5e-33ae-42d7-b34c-e981b6cffa3f.png" style="max-width: 100%; margin-left: auto; margin-right: auto; display: block;"/>
-#$ DESCRIPTION: <h1>Karate Viper Lite race</h1>
+#$ DESCRIPTION: <img src="https://user-images.githubusercontent.com/19867640/174759844-ffd85f42-1f1c-42bf-9032-d9f96d4d9619.svg" width="90px" style="display: block; float: left; margin-right: 10px; margin-top: 20px"/>
+#$ DESCRIPTION: <h1>Karate Race 6S 5"</h1>
 #$ DESCRIPTION: <br>
 #$ DESCRIPTION:
-#$ DESCRIPTION: This racing tune was developed from the Karate Race tune to suit my new Viper lite ultralite 5" racer project. [Viper Lite](https://rotorbuilds.com/build/29775)
+#$ DESCRIPTION: This 2s whoop racing tune was developed using the [Meteor 85](https://betafpv.com/collections/brushless-series-except-hd/products/beta85-pro2-whoop-quadcopter-2s) it is a slider tune allowing easy modification. 
 #$ DESCRIPTION:
 #$ DESCRIPTION: <br>
 #$ DESCRIPTION:
-#$ DESCRIPTION: This tune should be used with 48khz PWM settings or firmware and it 'SHOULD' work with other ultralite 5" frames eg the ET-5.
-#$ DESCRIPTION: The 4.4 version is slider based to make it easier to adjust for personal taste but use at your own risk.
+#$ DESCRIPTION: This tune should work well on any BRUSHLESS powered quality whoop build in eiher 1 or 2s. It shouldn't be used on a brushed whoop.
 #$ DESCRIPTION:
 #$ DESCRIPTION: <br>
 #$ DESCRIPTION:
@@ -35,7 +34,7 @@
 #$ DESCRIPTION: 1. Make sure your **ADC Filter is OFF** in the hardware page
 #$ DESCRIPTION: 1. Go to the radio (RC_LINK) presets and apply the correct setup for your system and link speed
 
-#$ DISCUSSION: https://github.com/betaflight/firmware-presets/pull/332
+#$ DISCUSSION: https://github.com/betaflight/firmware-presets/pull/331
 
 #$ INCLUDE_WARNING: misc/warnings/en/rpm_filters.txt
 #$ INCLUDE: presets/4.4/tune/defaults.txt
@@ -45,13 +44,16 @@
 set gyro_lpf1_static_hz = 0
 set gyro_lpf1_dyn_min_hz = 500
 set gyro_lpf1_dyn_max_hz = 1000
-set gyro_lpf1_dyn_expo = 7
 set simplified_gyro_filter = OFF
+
+#$ OPTION BEGIN (UNCHECKED): Bosch (BMI) gyro - experimantal
+    set gyro_lpf1_dyn_min_hz = 0
+    set gyro_lpf1_dyn_max_hz = 0
+#$ OPTION END
 
 # -- Gyro Dynamic Notches --
 set dyn_notch_count = 2
-set dyn_notch_q = 450
-set dyn_notch_min_hz = 125
+set dyn_notch_q = 600
 set dyn_notch_max_hz = 650
 
 # -- Dterm filtering --
@@ -62,11 +64,8 @@ set dshot_bidir = ON
 set rpm_filter_fade_range_hz = 100
 
 # -- Misc --
-set yaw_spin_recovery = AUTO
 set thrust_linear = 20
 
-# -- iTerm  --
-set iterm_relax_cutoff = 20
 
 # -- PIDsum limits --
 set iterm_limit = 500
@@ -74,45 +73,49 @@ set pidsum_limit_yaw = 1000
 
 
 # -- PID values --
-set simplified_pids_mode = RP
-set simplified_i_gain = 115
-set simplified_d_gain = 75
-set simplified_pi_gain = 85
-set simplified_dmax_gain = 125
+set p_pitch = 41
+set i_pitch = 70
+set d_pitch = 37
+set f_pitch = 110
+set p_roll = 41
+set i_roll = 70
+set d_roll = 37
+set f_roll = 111
+set p_yaw = 41
+set i_yaw = 70
+set f_yaw = 111
+set d_min_roll = 37
+set d_min_pitch = 37
+set simplified_master_multiplier = 155
+set simplified_i_gain = 95
+set simplified_d_gain = 80
+set simplified_pi_gain = 60
+set simplified_dmax_gain = 0
+set simplified_feedforward_gain = 60
 set simplified_pitch_d_gain = 90
-set simplified_pitch_pi_gain = 110
-simplified_tuning apply
+set simplified_pitch_pi_gain = 95
 
-# -- Feedforward --
-set feedforward_max_rate_limit = 100
-
-# -- TPA --
-set tpa_rate = 60
-set tpa_breakpoint = 1250
-
-#$ OPTION BEGIN (CHECKED): Dshot600
+#$ OPTION BEGIN (UNCHECKED): Dshot600
     set dshot_bidir = ON
     set motor_pwm_protocol = DSHOT600
 #$ OPTION END
 
-#$ OPTION BEGIN (UNCHECKED): Dshot300
+#$ OPTION BEGIN (CHECKED): Dshot300
     set dshot_bidir = ON
     set motor_pwm_protocol = Dshot300
 #$ OPTION END
 
-#$ OPTION BEGIN (UNCHECKED): Dynamic idle for 4s 2850-3000kv
-    #dynamic idle for 4s 2850-3000kv
-    set dyn_idle_min_rpm = 50
+#$ OPTION BEGIN (CHECKED): Set 12 poles for whoop motors
+    set motor_poles = 12
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): Dynamic idle for 11000kv 2s
+    set dyn_idle_min_rpm = 150
     set dyn_idle_p_gain = 35
 #$ OPTION END
 
-#$ OPTION BEGIN (UNCHECKED): Vbat Sag Compensation
+#$ OPTION BEGIN (CHECKED): Vbat sag compensation
     set vbat_sag_compensation = 100
-#$ OPTION END
-
-#$ OPTION BEGIN (UNCHECKED): Bosch (BMI) gyro - EXPERIMANTAL
-    set gyro_lpf1_dyn_min_hz = 0
-    set gyro_lpf1_dyn_max_hz = 0
 #$ OPTION END
 
 #$ OPTION_GROUP BEGIN: Some popular RC Links
@@ -143,7 +146,7 @@ set tpa_breakpoint = 1250
         feature RX_SERIAL
         set serialrx_provider = CRSF
 
-         #$ INCLUDE: presets/4.3/rc_link/generic/1000hz_race.txt
+        #$ INCLUDE: presets/4.3/rc_link/generic/1000hz_race.txt
          
     #$ OPTION END
     
@@ -153,7 +156,7 @@ set tpa_breakpoint = 1250
         feature RX_SERIAL
         set serialrx_provider = GHST
 
-         #$ INCLUDE:presets/4.3/rc_link/generic/250hz_race.txt
+        #$ INCLUDE:presets/4.3/rc_link/generic/250hz_race.txt
 
     #$ OPTION END
 
@@ -163,7 +166,8 @@ set tpa_breakpoint = 1250
         feature RX_SERIAL
         set serialrx_provider = GHST
 
-         #$ INCLUDE: presets/4.3/rc_link/generic/500hz_race.txt
+        #$ INCLUDE: presets/4.3/rc_link/generic/500hz_race.txt
+
     #$ OPTION END
 
 #$ OPTION_GROUP END
@@ -171,6 +175,9 @@ set tpa_breakpoint = 1250
 #$ OPTION_GROUP BEGIN: Optional rates
     #$ OPTION BEGIN (UNCHECKED): sugarK's rates
         #$ INCLUDE: presets/4.3/rates/SugarK.txt
+        set thr_expo = 80
+
     #$ OPTION END
 
 #$ OPTION_GROUP END
+
