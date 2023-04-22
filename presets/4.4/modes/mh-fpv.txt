@@ -2,11 +2,11 @@
 #$ FIRMWARE_VERSION: 4.4
 #$ CATEGORY: MODES
 #$ STATUS: COMMUNITY
+#$ KEYWORDS: modes
 #$ AUTHOR: mh-fpv
 #$ DESCRIPTION: Personal modes
 
 # aux switch settings
-# aux
 aux 0 0 0 1700 2100 0 0
 aux 1 1 1 900 1200 0 0
 aux 2 46 2 1700 2100 0 0
