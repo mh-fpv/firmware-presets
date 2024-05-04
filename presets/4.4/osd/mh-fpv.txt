@@ -124,3 +124,5 @@ set osd_canvas_width = 60
 set osd_canvas_height = 22
 set osd_craftname_msgs = OFF
 
+set vcd_video_system = HD
+

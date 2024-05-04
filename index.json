@@ -3684,7 +3684,7 @@
     },
     {
       "fullPath": "presets/4.4/osd/mh-fpv.txt",
-      "hash": "5abcc9910f8397e45fb1487a3a452780ab82e5fa66977d2f72e0acbc3eefae1b",
+      "hash": "2eb237034e4c8da6a178e2087c1d0b00a2aa3d599eaafafac8726c9e4b165be8",
       "title": "mh-fpv OSD DJI with GPS",
       "firmware_version": [
         "4.4"
@@ -4233,6 +4233,25 @@
       ],
       "author": "mouseFPV",
       "force_options_review": true,
+      "priority": 1000000000000
+    },
+    {
+      "fullPath": "presets/4.4/tune/quadmcfly/QuadMcFly_5_Inch_Freestyle.txt",
+      "hash": "f71d0cae4a6388e53a1711e4c4e355cee147851562d395cbeadfca5aeadafe99",
+      "title": "QuadMcFly - 5\" Freestyle with GoPro (Mid-Weight)",
+      "firmware_version": [
+        "4.4"
+      ],
+      "category": "TUNE",
+      "status": "EXPERIMENTAL",
+      "keywords": [
+        "4S",
+        "6S",
+        "5in",
+        "5\"",
+        "freestyle"
+      ],
+      "author": "QuadMcFly (Ryan Harrell)",
       "priority": 1000000000000
     },
     {
