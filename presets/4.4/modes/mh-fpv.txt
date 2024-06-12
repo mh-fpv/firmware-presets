@@ -1,5 +1,6 @@
 #$ TITLE: mh-fpv modes
 #$ FIRMWARE_VERSION: 4.4
+#$ FIRMWARE_VERSION: 4.5
 #$ CATEGORY: MODES
 #$ STATUS: COMMUNITY
 #$ KEYWORDS: modes
@@ -9,8 +10,8 @@
 # aux switch settings
 aux 0 0 0 1700 2100 0 0
 aux 1 1 1 900 1200 0 0
-aux 2 46 2 1700 2100 0 0
-aux 3 13 3 1700 2100 0 0
+aux 2 46 3 1700 2100 0 0
+aux 3 13 2 1700 2100 0 0
 aux 4 0 0 900 900 0 0
 aux 5 0 0 900 900 0 0
 aux 6 0 0 900 900 0 0
